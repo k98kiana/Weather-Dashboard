@@ -1,0 +1,14 @@
+.search-city {
+    background-color: rgb(0, 136, 255);
+    padding: 10px;
+    width: 100%;
+    margin: auto;
+    border-style: solid;
+    border-color: yellow;
+    border-width: 5px;
+    text-align: center;
+}
+
+#city-label {
+    color:rgb(8, 8, 121)
+}
