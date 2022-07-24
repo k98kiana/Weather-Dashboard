@@ -4,7 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="./assets/style.css">
     
     <title>Weather Dashboard</title>
@@ -16,10 +25,12 @@
     </header>
 <!--Creating the area for user to search for desired city-->
     <form class="search-city">
-        <label id="city-label">Search City Here</label>
+        <label id="city-label">Search City Here...</label>
         <div>
         <input type="text" placeholder="Search City Name Here">
-        <button></button>
+        <button id="search-button">
+            <i class="fa-search"></i>
+        </button>
         </div>
 <!--Creating the area where searched cities will be saved-->
         <div>
