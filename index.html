@@ -25,9 +25,9 @@
     </header>
 <!--Creating the area for user to search for desired city-->
     <form class="search-city">
-        <label id="city-label">Search City Here...</label>
+        <label for="city-label" style="font-size:xx-large; color:black; font-weight: bold;">Search City Name Here</label>
         <div>
-        <input type="text" placeholder="Search City Name Here">
+        <input id="city-label" type="text" placeholder="Search City Here...">
         <button id="search-button">
             <i class="fa fa-search"></i>
         </button>
@@ -35,7 +35,7 @@
 <!--Creating the area where searched cities will be saved-->
         <div>
                 <div>
-                    <ul></ul>
+                    <ul class="cities-stored"></ul>
                 </div>
 <!--Adding Button that will Clear all searches-->
                 <div>
@@ -44,21 +44,29 @@
         </div>
     </form>
 <!--Creating area that will display the current weather-->
-    <form>
-        <label>City Name</label>
-        <label></label> <!--Current Date-->
+    <form class="current-weather">
+        <div>
+            <label id="city">City Name</label>
+            <label id="current-date"></label> <!--Current Date-->
+            <div>
+                <img id="weather-icon" src="">
+            </div>
 
+        </div>
     <div>
         <div id="temperature"></div>
         <div id="humidity"></div>
-        <div id="wind-speed"></div>
-        <div id="UVIndex"></div>
+        <div id="windspeed"></div>
+        <div id="UVIndex">
+            <div id="uvdisplay"></div>
     </div>
     </form>
 <!--Display 5-day forecast here-->
     <form class="forecast">
         <label>5-Day Forecast</label>
-        <div id="forecast"></div>
+        <div id="5-dayforecast"></div>
     </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./assets/script.js"></script>
 </body>
 </html>
