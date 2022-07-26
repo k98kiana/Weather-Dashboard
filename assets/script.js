@@ -1,12 +1,12 @@
 //Creating variables
-var cityname=$("#city");
+var cityname=$("#city-name");
 var temperature=$("#temperature");
 var humidity=$("#humidity");
-var windspeed=$("windspeed");
+var windspeed=$("#windspeed");
 var uvdisplay=$("#uvdisplay");
-var citysearch=$("city-label");
-var searchbutton=$("search-button");
-var savedlist=$("cities-stored");
+var citysearch=$("#city");
+var searchbutton=$("#search-button");
+var savedlist=$("#cities-stored");
 
 
 function displayweather(city) {
@@ -48,7 +48,7 @@ function displayweather(city) {
             var UVvalue = response.current.uvi;
             uvdisplay.text(UVvalue);
 
-            if (UVvalue >=0 && UVvalue < 3) {
+            if (UVvalue >= 0 && UVvalue < 3) {
                 uvdisplay.addClass("green");
             } else if (UVvalue >= 3 && UVvalue < 6) {
                 uvdisplay.addClass("yellow");
@@ -67,7 +67,7 @@ function displayweather(city) {
                 var forecasthumidity = response.daily[i].humidity;
 
                 $("#5-dayforecast").append(
-                    `<div id="forecast-section" class="card text-white bg-primary mb-3" style="max-width:10rem;"> 
+                    `<div id="forecast-section" class="card text-white bg-info mb-3" style="max-width:10rem;"> 
                         <p class="section-text">${forecastdate}</p>
                         <img src="${forecasturl}"/>
                         <p>${forecasttemp} \xB0F</p>
@@ -79,25 +79,26 @@ function displayweather(city) {
     });
 }
 
-searchbutton.on("click", function(event) {
+searchbutton.on("click", function (event) {
     event.preventDefault();
 
-    var citysearch = citysearch.val();
+    var citylookup = citysearch.val();
     var storage = JSON.parse(localStorage.getItem("city-weather"));
-    storage.push(citysearch);
+    storage.push(citylookup);
     localStorage.setItem("city-weather", JSON.stringify(storage));
 
-    UVvalue.removeClass("green yellow orange red");
-    displayweather(citysearch);
+    uvdisplay.removeClass("green yellow orange red");
+    displayweather(citylookup);
     rendercities();
 });
 
-function rendercities () {
+function rendercities() {
     $("#cities-stored").empty();
 
     var storage = JSON.parse(localStorage.getItem("city-weather"));
 
     for(var i = 0; i < storage.length; i++) {
+
          var citylist = $("<li>");
          citylist.addClass("list-group-item saved-city");
          citylist.attr("id", i);
@@ -109,9 +110,11 @@ function rendercities () {
 savedlist.click(function(event) {
     var element = event.target;
     var index = element.id;
+    console.log(index);
     var idvar = $("#" + index);
     var city = idvar.text();
-    UVvalue.removeClass("green yellow orange red");
+    console.log(city);
+    uvdisplay.removeClass("green yellow orange red");
     displayweather(city);
 });
 

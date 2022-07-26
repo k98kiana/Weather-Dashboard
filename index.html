@@ -15,6 +15,9 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./assets/style.css">
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+
     
     <title>Weather Dashboard</title>
 </head>
@@ -27,26 +30,26 @@
     <form class="search-city">
         <label for="city-label" style="font-size:xx-large; color:black; font-weight: bold;">Search City Name Here</label>
         <div>
-        <input id="city-label" type="text" placeholder="Search City Here...">
-        <button id="search-button">
+        <input id="city" type="text" placeholder="Search City Here...">
+        <button id="search-button" type="search">
             <i class="fa fa-search"></i>
         </button>
         </div>
 <!--Creating the area where searched cities will be saved-->
         <div>
                 <div>
-                    <ul class="cities-stored"></ul>
+                    <ul id="cities-stored" class="list-group list-group-flush"></ul>
                 </div>
 <!--Adding Button that will Clear all searches-->
                 <div>
-                    <button id="clear">Clear Searches</button>
+                    <button class="clear" onclick="deleteitems()">Clear Searches</button>
                 </div>
         </div>
     </form>
 <!--Creating area that will display the current weather-->
     <form class="current-weather">
         <div>
-            <label id="city">City Name</label>
+            <label id="city-name">City Name</label>
             <label id="current-date"></label> <!--Current Date-->
             <div>
                 <img id="weather-icon" src="">
@@ -58,6 +61,7 @@
         <div id="humidity"></div>
         <div id="windspeed"></div>
         <div id="UVIndex">
+            UV Index: 
             <div id="uvdisplay"></div>
     </div>
     </div>

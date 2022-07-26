@@ -8,9 +8,9 @@ text-align: center;
 padding: 5px;
 margin: auto;
 height: 100px;
-background-color: blueviolet;
+background-color: gray;
 border-style: solid;
-border-color: wheat;
+border-color: white;
 border-width: 15px;
 }
 
@@ -21,12 +21,12 @@ h1 {
     }
     
     .search-city {
-        background-color: rgb(2, 68, 126);
+        background-color: gray;
         padding: 10px;
         width: 100%;
         margin: auto;
         border-style: solid;
-        border-color: wheat;
+        border-color: white;
         border-width: 15px;
         text-align: center;
     }
@@ -53,11 +53,19 @@ h1 {
     
     .current-weather {
        float: left;
+       width: 30%;
+       text-align: center;
+       background-color: gray;
+       height: auto;
     }
 
     .forecast {
         float: left;
-        background-color: blue;
+        background-color: gray;
+        width: 70%;
+        text-align: center;
+        font-size:large;
+        font-weight: bold;
     }
 
     #forecast-section {
@@ -87,4 +95,9 @@ h1 {
 
     .red {
         background-color: red;
+    }
+
+    .saved-city {
+        color:white;
+        background: transparent;
     }
