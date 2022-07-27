@@ -57,6 +57,7 @@ h1 {
         vertical-align: bottom;
         width: 50%;
         padding-top: 50px;
+        background-color: rgb(133, 103, 154) ;
     }
     
     .current-weather {
@@ -72,17 +73,13 @@ h1 {
     }
 
     .forecast {
-        background-color: rgb(133, 103, 154);
+        background-color: rgb(253, 199, 248);
         float: right;
         width: 100%;
         text-align: center;
         font-size:large;
         font-weight: bold;
         height: 292px;
-    }
-
-    #five-dayforecast {
-    background-color:rgb(253, 199, 248);
     }
 
     #forecast-section {
