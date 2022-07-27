@@ -10,7 +10,7 @@ var savedlist=$("#cities-stored");
 
 
 function displayweather(city) {
-    $("#5-dayforecast").empty();
+    $("#five-dayforecast").empty();
 
     var apiKey="990158dd5916b02b8f7d177b0822ad5d";
 
@@ -66,7 +66,7 @@ function displayweather(city) {
                 var forecasttemp = response.daily[i].temp.day;
                 var forecasthumidity = response.daily[i].humidity;
 
-                $("#5-dayforecast").append(
+                $("#five-dayforecast").append(
                     `<div id="forecast-section" class="card text-white bg-info mb-3" style="max-width:10rem;"> 
                         <p class="section-text">${forecastdate}</p>
                         <img src="${forecasturl}"/>
