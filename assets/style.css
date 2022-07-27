@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 header {
 text-align: center;
 padding: 5px;
@@ -56,7 +57,7 @@ h1 {
        width: 30%;
        text-align: center;
        background-color: gray;
-       height: 250px;
+       height: 292px;
        border-style: solid;
        border-width: 5px;
        border-color: blueviolet;
@@ -69,6 +70,7 @@ h1 {
         text-align: center;
         font-size:large;
         font-weight: bold;
+        height: 292px;
     }
 
     #forecast-section {
