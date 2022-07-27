@@ -12,8 +12,10 @@ var savedlist=$("#cities-stored");
 function displayweather(city) {
     $("#five-dayforecast").empty();
 
+//personal api key to open weather
     var apiKey="990158dd5916b02b8f7d177b0822ad5d";
 
+//adding web url to use api
     var queryapi=`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
 
     $.ajax({
@@ -24,18 +26,22 @@ function displayweather(city) {
         var forecastdate = date.getMonth() + 1 + "/" + date.getDate() + "/" + date.getFullYear();
         $("current-date").text(`(${forecastdate})`);
 
+        //Lines 30-33 add city names and weather icons
         var icondata = response.weather[0].icon;
         var iconurl = `https://openweathermap.org/img/wn/${icondata}@2x.png`;
-       
         cityname.text(response.name);
         $("#weather-icon").attr("src", iconurl);
 
+        //show the current weather temp
         temperature.text("Temp: " + response.main.temp + " \xB0" + "F");
 
+        //show the current humidity
         humidity.text("Humidity: " + response.main.humidity + " %");
 
+        //show current wind speed
         windspeed.text("Wind Speed: " + response.wind.speed + " MPH");
 
+        //show the uv index
         var latitude = response.coord.lat;
         var longitude = response.coord.lon;
         var onecallapi = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=imperial`;
@@ -58,6 +64,7 @@ function displayweather(city) {
                 uvdisplay.addClass("red");
             }
 
+            //for loop used to get 5 day forecast
             for (var i = 1; i < 6; i++) {
                 var date = new Date(response.daily[i].dt *1000);
                 var forecastdate = date.getMonth() + 1 + "/" + date.getDate() + "/" + date.getFullYear();
@@ -66,6 +73,7 @@ function displayweather(city) {
                 var forecasttemp = response.daily[i].temp.day;
                 var forecasthumidity = response.daily[i].humidity;
 
+                //appending forecasts to individual cards
                 $("#five-dayforecast").append(
                     `<div id="forecast-section" class="card text-white bg-info mb-3" style="max-width:10rem;"> 
                         <p class="section-text">${forecastdate}</p>
@@ -79,6 +87,7 @@ function displayweather(city) {
     });
 }
 
+// clicking on search button will store and display those values onto the page
 searchbutton.on("click", function (event) {
     event.preventDefault();
 
@@ -107,6 +116,7 @@ function rendercities() {
     }
 }
 
+//clicking on a city saved to the list will show that weather info again
 savedlist.click(function(event) {
     var element = event.target;
     var index = element.id;
@@ -127,4 +137,5 @@ function deleteitems() {
 }
 
 rendercities();
-displayweather("San Diego");
+//Run Function to display weather
+displayweather("San Diego"); // San Diego added as default
