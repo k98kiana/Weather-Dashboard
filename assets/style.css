@@ -57,8 +57,8 @@ h1 {
         vertical-align: bottom;
         width: 50%;
         height: 292px;
-        padding-top: 70px;
-        margin-top: 50px;
+        padding:0%;
+        margin-top: 25px;
         background-color: rgb(133, 103, 154) ;
         border-style: solid;
         border-width: 5px;
