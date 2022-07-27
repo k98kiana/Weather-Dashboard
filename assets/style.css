@@ -51,9 +51,15 @@ h1 {
         width: auto;
         height: auto;
     }
+
+    #left {
+        float: left;
+        vertical-align: bottom;
+    }
     
     .current-weather {
        float: left;
+       vertical-align: bottom;
        width: 30%;
        text-align: center;
        background-color: gray;
