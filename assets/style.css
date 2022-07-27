@@ -95,7 +95,7 @@ h1 {
         font-size: 15px;
     }
 
-    .uvdisplay {
+    #uvdisplay {
         display: inline-block;
     }
 
