@@ -72,7 +72,7 @@ h1 {
     }
 
     .forecast {
-        background-color: gray;
+        background-color: rgb(133, 103, 154);
         text-align: center;
         font-size:large;
         font-weight: bold;
@@ -80,7 +80,7 @@ h1 {
     }
 
     #five-dayforecast {
-    background-color:aquamarine;
+    background-color:rgb(253, 199, 248);
     }
 
     #forecast-section {
