@@ -91,6 +91,10 @@ h1 {
         font-size: 15px;
     }
 
+    .uvdisplay {
+        display: inline-block;
+    }
+    
     .green {
         background-color: green;
         width: 30px;
