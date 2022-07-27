@@ -60,6 +60,10 @@ h1 {
         padding-top: 70px;
         margin-top: 50px;
         background-color: rgb(133, 103, 154) ;
+        border-style: solid;
+        border-width: 5px;
+        border-color: blueviolet;
+ 
     }
     
     .current-weather {
