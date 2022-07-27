@@ -55,12 +55,13 @@ h1 {
     #left {
         float: left;
         vertical-align: bottom;
+        width: 50%;
     }
     
     .current-weather {
        float: left;
        vertical-align: bottom;
-       width: 30%;
+       width: 50%;
        text-align: center;
        background-color: gray;
        height: 292px;
@@ -70,9 +71,7 @@ h1 {
     }
 
     .forecast {
-        float: left;
         background-color: gray;
-        width: 70%;
         text-align: center;
         font-size:large;
         font-weight: bold;
